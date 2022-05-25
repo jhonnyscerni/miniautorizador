@@ -1,0 +1,106 @@
+{
+	"id": "054375ee-e318-faff-488a-8a1b64d02671",
+	"name": "Mini-Automatizador",
+	"description": "",
+	"order": [
+		"e4fb2273-676c-0a93-8fd8-de38ed52ee86",
+		"508b2136-c149-92f5-2278-3f015b91008a",
+		"40521c64-f65c-d9ca-5d26-b40c03b8e0b1"
+	],
+	"folders": [],
+	"folders_order": [],
+	"timestamp": 1653489749512,
+	"owner": "642361",
+	"public": false,
+	"requests": [
+		{
+			"id": "40521c64-f65c-d9ca-5d26-b40c03b8e0b1",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/v1/miniautorizador/transactions",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1653510812472,
+			"name": "Realizar uma Transação",
+			"description": "",
+			"collectionId": "054375ee-e318-faff-488a-8a1b64d02671",
+			"responses": [],
+			"rawModeData": "{\n    \"numberCard\": \"6549873025634501\",\n    \"password\": \"1234\",\n    \"value\":\"100.00\"\n}"
+		},
+		{
+			"id": "508b2136-c149-92f5-2278-3f015b91008a",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/v1/miniautorizador/cards/",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1653510814109,
+			"name": "Criar novo cartão",
+			"description": "",
+			"collectionId": "054375ee-e318-faff-488a-8a1b64d02671",
+			"responses": [],
+			"rawModeData": "{\n\t\"numberCard\": \"6549873025634501\",\n\t\"password\": \"1234\"\n}"
+		},
+		{
+			"id": "e4fb2273-676c-0a93-8fd8-de38ed52ee86",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/v1/miniautorizador/cards/6549873025634501",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1653510815643,
+			"name": "Obter saldo do Cartão",
+			"description": "",
+			"collectionId": "054375ee-e318-faff-488a-8a1b64d02671",
+			"responses": [],
+			"rawModeData": "{\n\t\"numberCard\": \"6549873025634501\",\n\t\"password\": \"1234\"\n}"
+		}
+	]
+}

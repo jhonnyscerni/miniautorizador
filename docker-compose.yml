@@ -1,0 +1,30 @@
+version: '3.4'
+
+networks:
+  miniautorizador-network:
+    driver: bridge
+
+services:
+  miniautorizador-db:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: "root"
+      MYSQL_DATABASE: "miniautorizador"
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+    ports:
+      - "3306:3306"
+    networks:
+      - miniautorizador-network
+
+  miniautorizador-api:
+    build: .
+    image: miniautorizador-api
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://miniautorizador-db:3306/miniautorizador
+    ports:
+      - "8080:8080"
+
+    networks:
+      - miniautorizador-network
+    depends_on:
+      - miniautorizador-db
